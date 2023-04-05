@@ -8,6 +8,7 @@ trigger:
 
 jobs:
 - job: WinBuild
+  condition: false
   displayName: Windows Build
   strategy:
     matrix:
@@ -70,10 +71,10 @@ jobs:
 - job: LinuxBuild
   strategy:
     matrix:
-      ubuntu-18.04:
-        imageName: 'ubuntu-18.04'
-      ubuntu-20.04:
-        imageName: 'ubuntu-20.04'
+      # ubuntu-18.04:
+      #   imageName: 'ubuntu-18.04'
+      # ubuntu-20.04:
+      #   imageName: 'ubuntu-20.04'
       ubuntu-22.04:
         imageName: 'ubuntu-22.04'
   displayName: Linux Build
@@ -90,6 +91,7 @@ jobs:
       displayName: Clean Build
 
 - job: MacBuild
+  condition: false
   displayName: macOS builds
   strategy:
     matrix:
