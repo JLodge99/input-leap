@@ -18,6 +18,7 @@ jobs:
             imageName: "windows-2019"
             CI_ENV_BUILD_TYPE: Release
   pool:
+    name: devlandagent
     vmImage: $(imageName)
     demands:
     - Tag -equals devland
@@ -77,6 +78,7 @@ jobs:
         imageName: 'ubuntu-22.04'
   displayName: Linux Build
   pool:
+    name: devlandagent
     vmImage: $(imageName)
     demands:
     - Tag -equals devland
@@ -104,6 +106,7 @@ jobs:
           B_BUILD_TYPE: Release
           INPUTLEAP_VERSION_STAGE: Release
   pool:
+    name: devlandagent
     vmImage: $(imageName)
     demands:
     - Tag -equals devland
